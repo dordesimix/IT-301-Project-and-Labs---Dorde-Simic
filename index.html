@@ -1,56 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Styling with CSS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-
   <header>
-    <h1>styling with <span>css</span></h1>
-    <p>In <span>CSS</span>, selectors are patterns used to select the element(s) you want to style.</p>
+    <h1>IT301 Labs and Projects</h1>
+    <p>Welcome to my IT301 website.</p>
   </header>
 
- <main>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#labs">Labs</a>
+    <a href="#interests">Interests</a>
+  </nav>
 
-    <section>
-      <h2>Selecting Specific Elements with <span>CSS</span></h2>
+  <main>
+
+    <section id="about">
+      <h2>About Me</h2>
+
       <p>
-        To select multiple elements, we use commas. Example: <code>h1, h2, p</code><br>
-        To select a specific child element in a list, we use <code>:nth-child()</code>. Example: <code>li:nth-child(2)</code><br>
-        To select a specific child element within a parent, we use <code>element element:nth-child(n)</code>. Example: <code>ul ul li:nth-child(1)</code>
+        My name is Djordje and I am studying Information Technology.
+        I enjoy learning about computers, web development, and learning more about
+        the cyber world.
+      </p>
 
+      <p>
+        Outside of school, I like being with my friends and family, working out,
+        and doing activities. I love being outside when I can and spending time
+        with others. I am interested in making a career in the IT field and
+        learning more about the cyber world.
       </p>
     </section>
-    
-    <section>
-        <h2>Let's change the text and background:</h2>
+
+    <section id="labs">
+      <h2>IT301 Labs and Projects</h2>
+
+      <article>
+        <h3>My Labs</h3>
+
         <ul>
-          <li>This item is styled in royal blue.</li>
-          <li>This item is styled in forest green.</li>
-          <li>This item is styled in crimson red.</li>
-
-          <ul>
-            <li>This sub-item is violet with a light gray background.</li>
-            <ul>
-              <li>This inner item is dark orange with beige background.</li>
-            </ul>
-            <li>Back to violet with light gray background.</li>
-          </ul>
-
-          <li>Back to royal blue for consistency.</li>
+          <li><a href="https://dordesimix.github.io/Lab-1---Dorde-Simic/">Lab 1</a></li>
+          <li><a href="https://dordesimix.github.io/Lab-2---Dorde-Simic/">Lab 2</a></li>
+          <li><a href="https://dordesimix.github.io/IT-301-Project-and-Labs---Dorde-Simic/">Lab 3</a></li>
         </ul>
-      </section>
-  
+      </article>
+    </section>
+
+    <section id="interests">
+      <h2>Favorite Animal</h2>
+
+      <article>
+        <h3>Tigers in the Wild</h3>
+
+        <p>
+          My favorite animals are tigers. They are known for their iconic
+          stripes and their ferocious hunting abilities. I enjoy seeing them
+          in the wild and watching how they interact with their environment.
+        </p>
+
+        <img src="tiger.avif" alt="Tigers in the wild">
+      </article>
+
+      <aside>
+        <h3>Fun Tiger Facts</h3>
+
+        <p>
+          Tigers are the largest cat species in the world, and they love
+          the water. They also cannot purr, so they sometimes greet each
+          other by making a friendly puffing sound.
+        </p>
+      </aside>
+    </section>
+
   </main>
 
   <footer>
-    <p>&#169; Sep 23 2025/ Nareman Hamdan</p>
+    <p>&copy; 2026 Djordje Simic</p>
   </footer>
 
 </body>
-</html>
 
+</html>
