@@ -1,0 +1,32 @@
+/* ====== FOOTER.CSS ====== */
+/* Add style for step#4 here*/
+
+footer {
+  background: #C3B1E1;
+  color: #3E1E68;
+  border: 2px solid #D9AED3;
+  text-align: center;
+  padding: 15px;
+}
+
+footer nav {
+  background: #D9AED3;
+  padding: 10px;
+}
+
+footer nav ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+}
+
+footer nav li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+footer nav a {
+  color: #5A189A;
+  font-weight: bold;
+  text-decoration: none;
+}

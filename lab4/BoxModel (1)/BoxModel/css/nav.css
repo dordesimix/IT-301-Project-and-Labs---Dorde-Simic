@@ -1,0 +1,20 @@
+/* ====== NAV.CSS ====== */
+/* Add style for step#3 here*/
+
+body > nav ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+body > nav li {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+body > nav li:last-child {
+  text-decoration: none;
+}
+
+body > nav a {
+  text-decoration: none;
+}
