@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Line Masonry</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .left-panel {
+      width: 90px;
+      height: 100vh;
+      flex-shrink: 0;
+      background: linear-gradient(#444, #ff8c1a);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      padding-top: 20px;
+      font-size: 2rem;
+    }
+
+    .right-panel {
+      flex-grow: 1;
+      height: 100vh;
+      overflow-y: auto;
+      background-color: black;
+    }
+
+    .masonry {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .masonry img {
+      height: 100px;
+      width: auto;
+      flex-grow: 1;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="left-panel">
+    <span>&#x1F4F7;</span>
+    <span>&#x1F5C4;&#xfe0f;</span>
+    <span>&#x2764;&#xfe0f;</span>
+    <span>&#x1F5D1;&#xfe0f;</span>
+  </aside>
+
+  <main class="right-panel">
+    <div class="masonry">
+
+      <img src="https://picsum.photos/128/100" alt="Random photo">
+      <img src="https://picsum.photos/147/100" alt="Random photo">
+      <img src="https://picsum.photos/166/100" alt="Random photo">
+      <img src="https://picsum.photos/185/100" alt="Random photo">
+      <img src="https://picsum.photos/204/100" alt="Random photo">
+      <img src="https://picsum.photos/223/100" alt="Random photo">
+      <img src="https://picsum.photos/242/100" alt="Random photo">
+      <img src="https://picsum.photos/261/100" alt="Random photo">
+      <img src="https://picsum.photos/280/100" alt="Random photo">
+      <img src="https://picsum.photos/299/100" alt="Random photo">
+      <img src="https://picsum.photos/318/100" alt="Random photo">
+      <img src="https://picsum.photos/337/100" alt="Random photo">
+      <img src="https://picsum.photos/356/100" alt="Random photo">
+      <img src="https://picsum.photos/375/100" alt="Random photo">
+      <img src="https://picsum.photos/394/100" alt="Random photo">
+      <img src="https://picsum.photos/119/100" alt="Random photo">
+      <img src="https://picsum.photos/158/100" alt="Random photo">
+      <img src="https://picsum.photos/197/100" alt="Random photo">
+      <img src="https://picsum.photos/236/100" alt="Random photo">
+      <img src="https://picsum.photos/275/100" alt="Random photo">
+      <img src="https://picsum.photos/314/100" alt="Random photo">
+      <img src="https://picsum.photos/353/100" alt="Random photo">
+      <img src="https://picsum.photos/392/100" alt="Random photo">
+      <img src="https://picsum.photos/109/100" alt="Random photo">
+
+    </div>
+  </main>
+
+</body>
+</html>
