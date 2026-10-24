@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Unity | Fitness Tools</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Website Header -->
+    <header>
+        <h1>FITNESS UNITY</h1>
+        <p>START YOUR JOURNEY</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="workouts.html">Workouts</a></li>
+            <li><a href="nutrition.html">Nutrition</a></li>
+            <li><a href="lifestyle.html">Healthy Living</a></li>
+            <li><a href="tools.html">Fitness Tools</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <!-- Fitness Tools Introduction -->
+        <section class="tools-intro">
+            <h2>Fitness Tools and Calculators</h2>
+
+            <p>
+                Understanding your body and nutritional needs
+                can help you make informed fitness decisions.
+                Use our fitness calculators to estimate your
+                protein intake, body fat percentage, and BMI.
+            </p>
+
+            <p>
+                These calculators provide general estimates.
+                Your individual needs can vary depending on
+                your activity level, health, and fitness goals.
+            </p>
+        </section>
+
+        <!-- Protein Calculator -->
+        <section class="tool-section">
+            <h2>Daily Protein Intake Calculator</h2>
+
+            <p>
+                Protein supports muscle repair and recovery.
+                This calculator uses a high-protein target of
+                1 gram per pound of body weight, a common
+                fitness approach for resistance training.
+                It is not a requirement for everyone.
+            </p>
+
+            <div class="calculator">
+
+                <label for="proteinWeight">
+                    Your Body Weight (lbs):
+                </label>
+                <input type="number" id="proteinWeight"
+                       min="1" step="any"
+                       placeholder="Example: 180">
+
+                <label for="dailyCalories">
+                    Daily Calories (optional):
+                </label>
+                <input type="number" id="dailyCalories"
+                       min="1" step="any"
+                       placeholder="Example: 2500">
+
+                <button type="button" id="proteinButton">
+                    Calculate Protein
+                </button>
+
+                <p id="proteinResult" class="tool-result"
+                   role="status" aria-live="polite"></p>
+
+            </div>
+
+            <p class="tool-tip">
+                Protein provides approximately 4 calories per
+                gram. The calorie input lets you see how much
+                of your daily energy target would come from
+                protein.
+            </p>
+        </section>
+
+        <!-- Body Fat Calculator -->
+        <section class="tool-section">
+            <h2>Body Fat Percentage Estimator</h2>
+
+            <p>
+                Body fat percentage is an estimate of how much
+                of your total body weight is fat tissue.
+                This calculator uses a traditional U.S. Navy
+                circumference-based formula.
+            </p>
+
+            <p>
+                Use a measuring tape and enter your height,
+                waist, and neck measurements in inches.
+                The female formula also requires hip size.
+                Select the formula that matches the
+                measurement method you want to use.
+            </p>
+
+            <div class="calculator">
+
+                <label for="bodyFormula">
+                    Body Fat Formula:
+                </label>
+                <select id="bodyFormula">
+                    <option value="male">Male Formula</option>
+                    <option value="female">Female Formula</option>
+                </select>
+
+                <label for="fatHeight">
+                    Height (inches):
+                </label>
+                <input type="number" id="fatHeight"
+                       min="1" step="any"
+                       placeholder="Example: 70">
+
+                <label for="fatWaist">
+                    Waist / Abdomen (inches):
+                </label>
+                <input type="number" id="fatWaist"
+                       min="1" step="any"
+                       placeholder="Example: 34">
+
+                <label for="fatNeck">
+                    Neck (inches):
+                </label>
+                <input type="number" id="fatNeck"
+                       min="1" step="any"
+                       placeholder="Example: 15">
+
+                <div id="hipGroup" class="hidden-field">
+                    <label for="fatHip">
+                        Hips (inches):
+                    </label>
+                    <input type="number" id="fatHip"
+                           min="1" step="any"
+                           placeholder="Example: 39">
+                </div>
+
+                <button type="button" id="fatButton">
+                    Estimate Body Fat
+                </button>
+
+                <p id="fatResult" class="tool-result"
+                   role="status" aria-live="polite"></p>
+
+            </div>
+
+            <p class="tool-tip">
+                Measurement Tip: Keep the tape level and
+                measure without pulling it too tightly.
+                For the male formula, measure the abdomen
+                at the navel. For the female formula,
+                measure the natural waist and widest hips.
+                Results are estimates, not exact
+                measurements or medical diagnoses.
+            </p>
+        </section>
+
+        <!-- BMI Calculator -->
+        <section class="tool-section">
+            <h2>Body Mass Index (BMI) Calculator</h2>
+
+            <p>
+                BMI compares your body weight to your height.
+                It is commonly used as a screening measurement
+                for adults, but it does not directly measure
+                body fat or distinguish muscle from fat.
+            </p>
+
+            <div class="calculator">
+
+                <label for="bmiWeight">
+                    Your Body Weight (lbs):
+                </label>
+                <input type="number" id="bmiWeight"
+                       min="1" step="any"
+                       placeholder="Example: 180">
+
+                <label for="bmiHeight">
+                    Your Height (inches):
+                </label>
+                <input type="number" id="bmiHeight"
+                       min="1" step="any"
+                       placeholder="Example: 70">
+
+                <button type="button" id="bmiButton">
+                    Calculate BMI
+                </button>
+
+                <p id="bmiResult" class="tool-result"
+                   role="status" aria-live="polite"></p>
+
+            </div>
+
+            <p class="tool-tip">
+                BMI is only one indicator of health.
+                It can be less informative for people
+                with greater muscle mass. Adult BMI
+                categories should not be applied to children.
+            </p>
+        </section>
+
+        <!-- Fitness Goals Form -->
+        <section class="tool-section">
+            <h2>Set Your Fitness Goals</h2>
+
+            <p>
+                Think about what you want to accomplish
+                during your fitness journey. Use this
+                simple form to organize your goals.
+            </p>
+
+            <div class="calculator">
+
+                <form id="goalForm">
+
+                    <label for="goalName">
+                        Your Name:
+                    </label>
+                    <input type="text" id="goalName"
+                           name="goalName" required
+                           placeholder="Enter your name">
+
+                    <label for="goalType">
+                        Primary Fitness Goal:
+                    </label>
+                    <select id="goalType"
+                            name="goalType" required>
+                        <option value="">Choose a goal</option>
+                        <option value="Build Muscle">
+                            Build Muscle
+                        </option>
+                        <option value="Lose Body Fat">
+                            Lose Body Fat
+                        </option>
+                        <option value="Improve Strength">
+                            Improve Strength
+                        </option>
+                        <option value="Improve Endurance">
+                            Improve Endurance
+                        </option>
+                        <option value="General Health">
+                            Improve General Health
+                        </option>
+                    </select>
+
+                    <fieldset>
+                        <legend>Experience Level</legend>
+
+                        <label>
+                            <input type="radio"
+                                   name="experience"
+                                   value="Beginner" required>
+                            Beginner
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="experience"
+                                   value="Intermediate">
+                            Intermediate
+                        </label>
+
+                        <label>
+                            <input type="radio"
+                                   name="experience"
+                                   value="Advanced">
+                            Advanced
+                        </label>
+                    </fieldset>
+
+                    <label for="goalNotes">
+                        Additional Goals:
+                    </label>
+                    <textarea id="goalNotes" name="goalNotes"
+                              rows="4"
+                              placeholder="Describe what you want to achieve"></textarea>
+
+                    <button type="submit">
+                        View My Goal
+                    </button>
+
+                </form>
+
+                <p id="goalResult" class="tool-result"
+                   role="status" aria-live="polite"></p>
+
+            </div>
+
+            <p class="tool-tip">
+                Your goal summary appears on this page.
+                This form does not send or save your
+                information to a server.
+            </p>
+        </section>
+
+        <!-- Helpful Resources -->
+        <section class="tool-section">
+            <h2>Continue Your Fitness Journey</h2>
+
+            <p>
+                Calculators are helpful tools, but healthy
+                progress involves consistent training,
+                nutritious food, and sufficient recovery.
+            </p>
+
+            <p>
+                <a href="workouts.html" class="main-button">
+                    Explore Workout Plans
+                </a>
+            </p>
+
+            <p>
+                <a href="nutrition.html" class="main-button">
+                    Explore Nutrition
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Website Footer -->
+    <footer>
+        <p>&copy; 2026 Fitness Unity. All Rights Reserved.</p>
+        <p>Start Your Journey.</p>
+    </footer>
+
+    <!-- JavaScript Fitness Calculators -->
+    <script>
+
+        /* =========================
+           PROTEIN CALCULATOR
+           ========================= */
+
+        function calculateProtein() {
+            const weight = Number(
+                document.getElementById("proteinWeight").value
+            );
+
+            const calorieInput =
+                document.getElementById("dailyCalories").value;
+
+            const result =
+                document.getElementById("proteinResult");
+
+            if (weight <= 0) {
+                result.textContent =
+                    "Please enter a valid body weight.";
+                return;
+            }
+
+            const protein = weight;
+            const proteinCalories = protein * 4;
+
+            let message =
+                "Suggested high-protein target: " +
+                protein.toFixed(1) +
+                " grams per day. This provides " +
+                proteinCalories.toFixed(0) +
+                " calories from protein.";
+
+            if (calorieInput !== "") {
+                const calories = Number(calorieInput);
+
+                if (calories <= 0) {
+                    result.textContent =
+                        "Please enter a valid calorie target.";
+                    return;
+                }
+
+                const percentage =
+                    (proteinCalories / calories) * 100;
+
+                message +=
+                    " That is " +
+                    percentage.toFixed(1) +
+                    "% of your daily calorie target.";
+
+                if (percentage > 100) {
+                    message +=
+                        " Your protein target alone exceeds " +
+                        "your calorie target. Review your inputs.";
+                }
+            }
+
+            result.textContent = message;
+        }
+
+        document.getElementById("proteinButton")
+            .addEventListener("click", calculateProtein);
+
+
+        /* =========================
+           BODY FAT CALCULATOR
+           ========================= */
+
+        const formulaSelect =
+            document.getElementById("bodyFormula");
+
+        const hipGroup =
+            document.getElementById("hipGroup");
+
+        function showHipField() {
+            if (formulaSelect.value === "female") {
+                hipGroup.style.display = "block";
+            } else {
+                hipGroup.style.display = "none";
+            }
+        }
+
+        formulaSelect.addEventListener(
+            "change", showHipField
+        );
+
+        function calculateBodyFat() {
+            const formula = formulaSelect.value;
+
+            const height = Number(
+                document.getElementById("fatHeight").value
+            );
+
+            const waist = Number(
+                document.getElementById("fatWaist").value
+            );
+
+            const neck = Number(
+                document.getElementById("fatNeck").value
+            );
+
+            const hip = Number(
+                document.getElementById("fatHip").value
+            );
+
+            const result =
+                document.getElementById("fatResult");
+
+            if (height <= 0 || waist <= 0 || neck <= 0) {
+                result.textContent =
+                    "Please enter valid measurements.";
+                return;
+            }
+
+            let bodyFat;
+
+            if (formula === "male") {
+                if (waist <= neck) {
+                    result.textContent =
+                        "Waist must be larger than neck.";
+                    return;
+                }
+
+                bodyFat =
+                    86.010 * Math.log10(waist - neck) -
+                    70.041 * Math.log10(height) +
+                    36.76;
+
+            } else {
+                if (hip <= 0 || waist + hip <= neck) {
+                    result.textContent =
+                        "Please check your waist, hip, and neck measurements.";
+                    return;
+                }
+
+                bodyFat =
+                    163.205 * Math.log10(waist + hip - neck) -
+                    97.684 * Math.log10(height) -
+                    78.387;
+            }
+
+            if (bodyFat <= 0 || bodyFat >= 100) {
+                result.textContent =
+                    "These measurements produced an invalid estimate. " +
+                    "Please check your entries.";
+                return;
+            }
+
+            result.textContent =
+                "Estimated Body Fat: " +
+                bodyFat.toFixed(1) +
+                "%. This is an approximation, not an exact measurement.";
+        }
+
+        document.getElementById("fatButton")
+            .addEventListener("click", calculateBodyFat);
+
+
+        /* =========================
+           BMI CALCULATOR
+           ========================= */
+
+        function calculateBMI() {
+            const weight = Number(
+                document.getElementById("bmiWeight").value
+            );
+
+            const height = Number(
+                document.getElementById("bmiHeight").value
+            );
+
+            const result =
+                document.getElementById("bmiResult");
+
+            if (weight <= 0 || height <= 0) {
+                result.textContent =
+                    "Please enter a valid weight and height.";
+                return;
+            }
+
+            const bmi = (weight / (height * height)) * 703;
+
+            result.textContent =
+                "Your BMI is " +
+                bmi.toFixed(1) +
+                ". BMI is a screening measure, not a diagnosis.";
+        }
+
+        document.getElementById("bmiButton")
+            .addEventListener("click", calculateBMI);
+
+
+        /* =========================
+           FITNESS GOALS FORM
+           ========================= */
+
+        function showGoal(event) {
+            event.preventDefault();
+
+            const name =
+                document.getElementById("goalName").value;
+
+            const goal =
+                document.getElementById("goalType").value;
+
+            const experience = document.querySelector(
+                'input[name="experience"]:checked'
+            );
+
+            const result =
+                document.getElementById("goalResult");
+
+            if (experience) {
+                result.textContent =
+                    name + ", your fitness goal is to " +
+                    goal.toLowerCase() +
+                    ". Your current experience level is " +
+                    experience.value +
+                    ". Start your journey and stay consistent!";
+            }
+        }
+
+        document.getElementById("goalForm")
+            .addEventListener("submit", showGoal);
+
+    </script>
+
+</body>
+</html>
