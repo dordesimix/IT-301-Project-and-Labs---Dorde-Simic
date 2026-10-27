@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Profile</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+        }
+
+        .card {
+            background-color: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Random User Profile</h1>
+    <p>Welcome to  random user profile page.</p>
+
+    <script>
+
+        const p = new Promise((resolve, reject) => {
+            resolve('Promise completed');
+        });
+
+        // consume the promise
+        p.then(success => console.log(success))
+         .catch(reason => console.log(reason))
+         .finally(() => console.log('Thats all!'));
+
+        let img = document.createElement('img');
+        let form = document.createElement('form');
+        let bttn = document.createElement('button');
+
+        let card = document.createElement('div');
+        card.className = 'card';
+
+        let name = document.createElement('h2');
+        let email = document.createElement('p');
+        let phone = document.createElement('p');
+
+        form.action = '#';
+        bttn.type = 'button';
+        bttn.innerText = 'Generate Profile';
+
+        form.appendChild(bttn);
+        document.body.appendChild(form);
+
+        card.appendChild(img);
+        card.appendChild(name);
+        card.appendChild(email);
+        card.appendChild(phone);
+        document.body.appendChild(card);
+
+        const getImg = async () => {
+            try {
+                let imgAdd = await fetch('https://randomuser.me/api/');
+                imgAdd = await imgAdd.json();
+
+                let user = imgAdd.results[0];
+
+                img.src = user.picture.large;
+                img.alt = 'User picture';
+
+                name.innerText = user.name.first + ' ' + user.name.last;
+                email.innerText = user.email;
+                phone.innerText = user.phone;
+
+            } catch (reason) {
+                console.log(reason);
+            }
+        };
+
+        bttn.addEventListener('click', getImg);
+
+        getImg();
+
+    </script>
+</body>
+</html>
