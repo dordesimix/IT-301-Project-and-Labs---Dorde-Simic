@@ -1,0 +1,125 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            width: 300px;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #passwordRules {
+            display: none;
+        }
+
+        .valid {
+            color: green;
+        }
+
+        .invalid {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+
+    <form id="myForm">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name"
+               placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email"
+               placeholder="Enter your email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password"
+               placeholder="Enter your password" required>
+
+        <div id="passwordRules">
+            <p id="length" class="invalid">At least 6 characters</p>
+            <p id="special" class="invalid">Must include a special character (!@#$...)</p>
+            <p id="uppercase" class="invalid">Must include an uppercase letter (A-Z)</p>
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        let form = document.getElementById("myForm");
+        let passwordInput = document.getElementById("password");
+
+        // Form submit event
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            window.location.href = "success.html";
+        });
+
+        // Password input event
+        passwordInput.addEventListener("input", function() {
+
+            let password = passwordInput.value;
+
+            // Show password rules when typing
+            if (password.length > 0) {
+                document.getElementById("passwordRules").style.display = "block";
+            } else {
+                document.getElementById("passwordRules").style.display = "none";
+            }
+
+            // Check password conditions
+            let lengthValid = password.length >= 6;
+            let specialValid = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+            let uppercaseValid = /[A-Z]/.test(password);
+
+            // Update password rule colors
+            document.getElementById("length").classList.toggle("valid", lengthValid);
+            document.getElementById("length").classList.toggle("invalid", !lengthValid);
+
+            document.getElementById("special").classList.toggle("valid", specialValid);
+            document.getElementById("special").classList.toggle("invalid", !specialValid);
+
+            document.getElementById("uppercase").classList.toggle("valid", uppercaseValid);
+            document.getElementById("uppercase").classList.toggle("invalid", !uppercaseValid);
+
+        });
+    </script>
+
+</body>
+</html>
